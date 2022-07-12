@@ -6,14 +6,24 @@ The below component was designed to count down the days until our CTO's birthday
 **Do a critique:** The current implementation isn't perfect. How could it be improved?
 
 * Pick an area of improvement to implement.
+  - Change folder structure
+  - Validate date for Countdown props
+  - Update styling
 * What would happen to the current code if the date were changed, the page layout was changed or the format was changed?
+  - If the date was changed, Countdown would count for both past and future date
+  - If the page layout was changed, Countdown wouldn't change it's layout.
+  - If the format was changed, Countdown wouldn't change it's format.
 * Does the current implementation follow best practices for HTML, CSS, JS and React?
+  - No, it doesn't. I changed the folder structure to follow best practice.
 
 **Spice it up:** Let's be honest, this countdown could be a whole lot more exciting.
 
 * What could you do to create a greater sense of urgency?
+  - I could update the design.
 * How would you make this countdown more aesthetically pleasing?
+  - I think introducing some animations will make more pleasing.
 * Trust your design instincts, and explain how your design choices impact the user experience
+  - My design choice is to emphasize the count values so users will notice easily how much time is left until the birthday.
 
 ## Getting Started with Create React App
 

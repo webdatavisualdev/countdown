@@ -1,0 +1,17 @@
+.Countdown {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+.countdown-col {
+  padding: 15px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.countdown-col strong {
+  font-size: 20px;
+}

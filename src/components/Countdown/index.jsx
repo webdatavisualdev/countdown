@@ -1,4 +1,5 @@
 import React from 'react';
+import "./style.css";
 
 class Countdown extends React.Component {
   constructor(props) {
@@ -13,11 +14,13 @@ class Countdown extends React.Component {
   }
 
   componentDidMount() {
-    // update every second
-    this.interval = setInterval(() => {
-      const date = this.calculateCountdown(this.props.date);
-      date ? this.setState(date) : this.stop();
-    }, 1000);
+    if (new Date() < new Date(this.props.date)) {
+      // update every second
+      this.interval = setInterval(() => {
+        const date = this.calculateCountdown(this.props.date);
+        date ? this.setState(date) : this.stop();
+      }, 1000);
+    }
   }
 
   componentWillUnmount() {
@@ -75,25 +78,25 @@ class Countdown extends React.Component {
 
     return (
       <div className="Countdown">
-        <span className="countdown-col">
+        <div className="countdown-col">
           <strong>{this.addLeadingZeros(countDown.days)}</strong>
-          <span>{countDown.days === 1 ? 'Day' : 'Days'}</span>
-        </span>
+          <span>{countDown.days < 2 ? 'Day' : 'Days'}</span>
+        </div>
 
-        <span className="countdown-col">
+        <div className="countdown-col">
           <strong>{this.addLeadingZeros(countDown.hours)}</strong>
-          <span>Hours</span>
-        </span>
+          <span>{countDown.hours < 2 ? 'Hour' : 'Hours'}</span>
+        </div>
 
-        <span className="countdown-col">
+        <div className="countdown-col">
           <strong>{this.addLeadingZeros(countDown.min)}</strong>
-          <span>Min</span>
-        </span>
+          <span>{countDown.min < 2 ? 'Min' : 'Mins'}</span>
+        </div>
 
-        <span className="countdown-col">
+        <div className="countdown-col">
           <strong>{this.addLeadingZeros(countDown.sec)}</strong>
-          <span>Sec</span>
-        </span>
+          <span>{countDown.sec < 2 ? 'Sec' : 'Secs'}</span>
+        </div>
       </div>
     );
   }
